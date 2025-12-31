@@ -1,0 +1,45 @@
+CREATE DATABASE EMPLOYE;
+USE EMPLOYE;
+CREATE TABLE EMPLOYE (
+EMPID int PRIMARY KEY,
+EMPLNAME VARCHAR (50),
+DEPARTMENT_NAME VARCHAR (50),
+CITY VARCHAR (50),
+SALARY INT,
+HIRE_DATE DATE
+);
+insert into EMPLOYE (EMPID, EMPLNAME, DEPARTMENT_NAME, CITY, SALARY, HIRE_DATE)
+values
+(101, "RAHUL MEHTA", 'SALES', 'DELHI', 55000, '2020-04-12'),
+(102, "Priya Sharma", 'HR', 'MUMBAI', 62000, '2019-09-25'),
+(103, "Aman Singh", 'IT', 'BENGALURU', '72000', '2021-03-10'),
+(104, "Neha Patel", 'SALES', 'DELHI', '48000', '2022-01-14'),
+(105, "Karan Joshi", 'Marketing', 'Pune', '45000', '2018-07-22'),
+(106, "Divya Nair", 'IT', 'Chennai', '81000', '2019-12-11'),
+(107, "Raj Kumar", 'HR', 'DELHI', '60000', '2020-05-28'),
+(108, "Simran Kaur", 'Finance', 'Mumbai', '58000', '2021-08-03'),
+(109, "Arjun Reddy", 'IT', 'Hyderabad', '70000', '2022-02-18'),
+(110, "Anjali Das", 'SALES', 'KOLKATA', '51000', '2023-01-15');
+select *FROM employe
+WHERE DEPARTMENT_NAME IN('IT', 'HR');
+select *FROM employe
+WHERE DEPARTMENT_NAME IN('sales', 'IT', 'HR');
+SELECT *
+FROM Employe
+WHERE Salary BETWEEN 50000 AND 70000;
+SELECT *
+FROM Employe
+WHERE EMPLNAME LIKE 'A%';
+SELECT *
+FROM Employe
+WHERE EMPLNAME LIKE '%AN%';
+SELECT *
+FROM Employe
+WHERE (City IN ('Delhi', 'Mumbai')) AND (Salary > 55000);
+SELECT *
+FROM Employe
+WHERE DEPARTMENT_NAME NOT IN ('HR');
+SELECT *
+FROM Employe
+WHERE HIRE_DATE BETWEEN '2019' AND '2022'
+ORDER BY HireDate ASC;
